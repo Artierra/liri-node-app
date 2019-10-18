@@ -1,3 +1,5 @@
+var Spotify = require('node-spotify-api');
+var spotify = new Spotify(keys.spotify);
 
 search: function ({
     type: 'artist OR album OR track',
