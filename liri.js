@@ -10,35 +10,22 @@ var axios = require("axios");
 var action = process.argv[2];
 var question = process.argv[3];
 
-// function switchCase() {
+// // Loop through all the words in the node argument
+// // And do a little for-loop magic to handle the inclusion of "+"s
+// for (var i = 2; i < question.length; i++) {
 
-//     switch (action) {
-//         case 'concert-this':
-//             bands(question);
-//             break;
+//     if (i > 2 && i < question.length) {
+//         movieName = movieName + "+" + question[i];
+//     } else {
+//         movieName += question[i];
 
-//         case 'spotify-this-song':
-//             spotSong(question);
-//             break;
-
-//         case 'movie-this':
-//             movieInfo(question);
-//             break;
-
-//         case 'do-what-it-says':
-//             getRandom();
-//             break;
-
-//         default:
-//             logIt("Invalid Instruction");
-//             break;
-//             console.log(action);
 //     }
-//};
+// }
+
 
 function movieInfo(question) {
     // Create an empty variable for holding the movie name
-    var movieName = undefined;
+    var movieName = "";
 
     if (question === undefined) {
         movieName = "Mr. Nobody";
@@ -47,21 +34,17 @@ function movieInfo(question) {
         movieName = question;
     };
 
-    // Store all of the arguments in an array
+    // // Store all of the arguments in an array
+    // for (var i = 2; i < question.length; i++) {
 
-    // movieName = process.argv[3];
-    // var nodeArgs = process.argv;
-    // // Loop through all the words in the node argument
-    // // And do a little for-loop magic to handle the inclusion of "+"s
-    // for (var i = 2; i < nodeArgs.length; i++) {
-
-    //     if (i > 2 && i < nodeArgs.length) {
-    //         movieName = movieName + "+" + nodeArgs[i];
+    //     if (i > 2 && i < question.length) {
+    //         movieName = movieName + "+" + question[i];
     //     } else {
-    //         movieName += nodeArgs[i];
+    //         movieName += question[i];
 
     //     }
     // }
+
 
 
     // Then run a request with axios to the OMDB API with the movie specified
@@ -106,33 +89,24 @@ function movieInfo(question) {
 }
 
 function bands(question) {
-    var artist = undefined;
-    if (question === undefined) {
-        band = "Celine Dion";
-        alert('No band entered');
-    } else {
-        artist = question;
+    var artist = question;
+    if (artist === undefined) {
+        artist = "Celine Dion";
+        // alert('No band entered');
     }
 
-    var queryUrl = "https: rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
+    var queryUrl = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
 
-    // This line is just to help us debug against the actual URL.
-    //     *
-
-    // for (var i = 3; i < process.argv.length; i++) {
-    //     if (i >= 4) {
-    //         userQuery += (" " + process.argv[i].toLowerCase())
-    //     } else {
-    //         userQuery = (process.argv[i]).toLowerCase()
-    //     }
-    console.log(queryUrl);
+    //console.log(queryUrl);
 
     axios.get(queryUrl).then(
             function (response) {
-                console.log(response.data);
-                // console.log("Venue: " + response.data.);
-                // console.log("Location: " + response.data.);
-                // console.log("date: " + response.data.);
+                //console.log(response.data[0]);
+
+                console.log("Venue: " + response.data[0].venue.name);
+                console.log("Location: " + response.data[0].venue.city);
+                console.log("Location: " + response.data[0].venue.region);
+                console.log("date: " + response.data[0].datetime);
 
             })
         .catch(function (error) {
@@ -159,7 +133,7 @@ function bands(question) {
 
 
 function spotSong(question) {
-    var songs = undefined;
+    var songs = question;
 
     if (question === undefined) {
         songs = "Let it Be";
@@ -175,20 +149,19 @@ function spotSong(question) {
             return console.log('Error occurred: ' + err);
         }
 
-        console.log(data.tracks.item);
-        for (var i = 0; i < songs.length; i++) {
-            console.log(i);
-            console.log("Artist: " + songs[i].artist);
-            console.log("Song Name: " + songs[i].name);
-            console.log("Preview Song: " + songs[i].preview_url);
-            console.log("album: " + songs[i].album.name)
-        }
+        console.log(data.tracks.items[0]);
+        // for (var i = 0; i < songs.length; i++) {
+        //     console.log(i);
+        //     console.log("Artist: " + songs[i].artist);
+        //     console.log("Song Name: " + songs[i].name);
+        //     console.log("Preview Song: " + songs[i].preview_url);
+        //     console.log("album: " + songs[i].album.name)
+        // }
 
 
     });
 
 }
-
 
 
 function getRandom() {
