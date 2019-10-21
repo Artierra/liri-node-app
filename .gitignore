@@ -4,4 +4,7 @@ node_modules
 .env
 liri3.js
 lirispotify.js
+spotify.js
+bands.js
+liri4.js
 ```

@@ -34,17 +34,6 @@ function movieInfo(question) {
         movieName = question;
     };
 
-    // // Store all of the arguments in an array
-    // for (var i = 2; i < question.length; i++) {
-
-    //     if (i > 2 && i < question.length) {
-    //         movieName = movieName + "+" + question[i];
-    //     } else {
-    //         movieName += question[i];
-
-    //     }
-    // }
-
 
 
     // Then run a request with axios to the OMDB API with the movie specified
@@ -101,7 +90,7 @@ function bands(question) {
 
     axios.get(queryUrl).then(
             function (response) {
-                //console.log(response.data[0]);
+                console.log(response.data[0]);
 
                 console.log("Venue: " + response.data[0].venue.name);
                 console.log("Location: " + response.data[0].venue.city);
@@ -128,40 +117,39 @@ function bands(question) {
                 console.log("Error", error.message);
             }
             console.log(error.config);
+
         });
+
 }
 
-
 function spotSong(question) {
-    var songs = question;
 
     if (question === undefined) {
-        songs = "Let it Be";
+        songName = "The Sign";
 
     } else {
-        songs = question;
-    };
+        songName = question;
+    }
+
     spotify.search({
         type: 'track',
-        query: 'All the Small Things'
+        query: songName
     }, function (err, data) {
         if (err) {
             return console.log('Error occurred: ' + err);
         }
 
         console.log(data.tracks.items[0]);
-        // for (var i = 0; i < songs.length; i++) {
-        //     console.log(i);
-        //     console.log("Artist: " + songs[i].artist);
-        //     console.log("Song Name: " + songs[i].name);
-        //     console.log("Preview Song: " + songs[i].preview_url);
-        //     console.log("album: " + songs[i].album.name)
-        // }
-
+        //for (var i = 0; i < songs.length; i++) {
+        console.log("\n---------------------------------------------------\n");
+        console.log("Artist: " + data.tracks.items[0].artists[0].name);
+        console.log("Song Name: " + data.tracks.items[0].name);
+        console.log("Preview Song: " + data.tracks.items[2].preview_url);
+        console.log("album: " + data.tracks.items[0].album.name)
+        console.log("\n---------------------------------------------------\n");
 
     });
-
-}
+};
 
 
 function getRandom() {
