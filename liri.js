@@ -35,17 +35,17 @@ function movieInfo(question) {
     };
 
 
-
     // Then run a request with axios to the OMDB API with the movie specified
 
     var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
     // This line is just to help us debug against the actual URL.
 
-    console.log(queryUrl);
+    // console.log(queryUrl);
 
     axios.get(queryUrl).then(
             function (response) {
-                console.log(response.data)
+                //console.log(response.data);
+                console.log("\n---------------------------------------------------\n");
                 console.log("Title: " + response.data.Title);
                 console.log("Release Year: " + response.data.Released);
                 console.log("IMDB Rating: " + response.data.imdbRating);
@@ -54,6 +54,7 @@ function movieInfo(question) {
                 console.log("Language: " + response.data.Language);
                 console.log("Plot: " + response.data.Plot);
                 console.log("Actors: " + response.data.Actors);
+                console.log("\n---------------------------------------------------\n");
             })
         .catch(function (error) {
             if (error.response) {
@@ -90,13 +91,13 @@ function bands(question) {
 
     axios.get(queryUrl).then(
             function (response) {
-                console.log(response.data[0]);
-
+                //console.log(response.data[0]);
+                console.log("\n---------------------------------------------------\n");
                 console.log("Venue: " + response.data[0].venue.name);
                 console.log("Location: " + response.data[0].venue.city);
                 console.log("Location: " + response.data[0].venue.region);
                 console.log("date: " + response.data[0].datetime);
-
+                console.log("\n---------------------------------------------------\n");
             })
         .catch(function (error) {
             if (error.response) {
@@ -139,12 +140,12 @@ function spotSong(question) {
             return console.log('Error occurred: ' + err);
         }
 
-        console.log(data.tracks.items[0]);
-        //for (var i = 0; i < songs.length; i++) {
+        // console.log(data.tracks.items[0]);
+
         console.log("\n---------------------------------------------------\n");
         console.log("Artist: " + data.tracks.items[0].artists[0].name);
         console.log("Song Name: " + data.tracks.items[0].name);
-        console.log("Preview Song: " + data.tracks.items[2].preview_url);
+        console.log("Preview Song: " + data.tracks.items[0].preview_url);
         console.log("album: " + data.tracks.items[0].album.name)
         console.log("\n---------------------------------------------------\n");
 
@@ -156,6 +157,9 @@ function getRandom() {
     fs.readFile('random.txt', 'utf8', function (err, data) {
         if (err) throw err;
         console.log(data);
+        var dataArr = data.split(',')
+        userInput(dataArr[0], dataArr[1]);
+
     });
 }
 
