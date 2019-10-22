@@ -72,3 +72,6 @@ Format: ![Alt Text](url)
 ![movie-this-screenshot](https://github.com/Artierra/liri-node-app/blob/master/movie-this%20screenshot.png)
 
 ![spotify-this-song](https://github.com/Artierra/liri-node-app/blob/master/spotify-this-song%20screenshot.png)
+
+![spotify-this-song](https://github.com/Artierra/liri-node-app/blob/master/spotify-this-song%20screenshot.png)
+

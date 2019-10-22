@@ -7,8 +7,8 @@ var Spotify = require('node-spotify-api');
 var spotify = new Spotify(keys.spotify);
 var request = require('request');
 var axios = require("axios");
-var action = process.argv[2];
-var question = process.argv[3];
+var userAction = process.argv[2];
+var userQuestion = process.argv[3];
 
 // // Loop through all the words in the node argument
 // // And do a little for-loop magic to handle the inclusion of "+"s
@@ -157,13 +157,14 @@ function getRandom() {
     fs.readFile('random.txt', 'utf8', function (err, data) {
         if (err) throw err;
         console.log(data);
-        var dataArr = data.split(',')
-        userInput(dataArr[0], dataArr[1]);
+        var dataArr = data.split(',');
+
+        switchCase(dataArr[0], dataArr[1]);
 
     });
 }
 
-function switchCase() {
+function switchCase(action, question) {
 
     switch (action) {
         case 'concert-this':
@@ -187,4 +188,4 @@ function switchCase() {
             console.log("Liri does not know that");
     }
 }
-switchCase();
+switchCase(userAction, userQuestion);
