@@ -70,4 +70,4 @@ Format: ![Alt Text](url)
 ![bands-in-town screenshot](https://github.com/Artierra/liri-node-app/blob/master/bands-in-townscreenshot.png)
 
 
-![movie-this-screenshot](https://raw.githubusercontent.com/Artierra/liri-node-app/master/path/to/movie-this screenshot.png)
+![movie-this-screenshot](https://github.com/Artierra/liri-node-app/blob/master/movie-this%20screenshot.png)
