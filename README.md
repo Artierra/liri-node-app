@@ -7,13 +7,13 @@ The following node modules must be installed in order for the app to work: Momen
 
 To run the application clone this repository to your computer and then run the following commands from a bash command line.
 
-node liri.js concert-this <artist/band name here> - This will return upcoming concert information from Bands in Town.
+node liri.js concert-this <artist/band name here> (put this in quotes to take queries with more than one word)- This will return upcoming concert information from Bands in Town. 
 
-node liri.js spotify-this-song '' - This will return song information from Spotify.
+node liri.js spotify-this-song '' - This will return song information from Spotify. (put this in quotes to take queries with more than one word)
 
-node liri.js movie-this '' - This will return information about movies from OMDB.
+node liri.js movie-this '' - This will return information about movies from OMDB. (put this in quotes to take queries with more than one word)
 
-node liri.js do-what-it-says - This will run a special command that is stored in a text file.
+node liri.js do-what-it-says - This will run a special command that is stored in a text file.(put this in quotes to take queries with more than one word)
 
 1. **App Overview** 
 We are creating a command line interface application that retrieves information from three sources, BandsInTown, OMDB Movies and Spotify with specific commands created within the applications
@@ -51,13 +51,18 @@ In order to accomlish this we must work with modules that allow us to access inf
  
 3. Give start-to-finish instructions on how to run the app
 
-4. Include screenshots, gifs or videos of the app functioning
-
 5. **Link to the app**
     https://github.com/Artierra/liri-node-app
 
 6. **Technologies used in the app**
-    This app uses node.js and modules
+    node.js and modules
+    API calls 
+    
 
 7. I am trying to undersand the concepts in node.js and cli applications by developing this applications.
-    
+
+8. **Screenshots of app functioning**
+    ![movie-this](http:///to/movie-this screenshot.png)
+   
+
+![movie-this-screenshot](https://raw.githubusercontent.com/Artierra/liri-node-app/master/path/to/movie-this screenshot.png)
