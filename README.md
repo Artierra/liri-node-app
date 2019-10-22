@@ -62,7 +62,12 @@ In order to accomlish this we must work with modules that allow us to access inf
 7. I am trying to undersand the concepts in node.js and cli applications by developing this applications.
 
 8. **Screenshots of app functioning**
-    ![movie-this](http:///to/movie-this screenshot.png)
-   
+This is the format suggested to include a screenshot
+![GitHub Logo](/images/logo.png)
+Format: ![Alt Text](url)
+
+
+![bands-in-town screenshot](https://github.com/Artierra/liri-node-app/blob/master/bands-in-townscreenshot.png)
+
 
 ![movie-this-screenshot](https://raw.githubusercontent.com/Artierra/liri-node-app/master/path/to/movie-this screenshot.png)
