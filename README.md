@@ -7,11 +7,11 @@ The following node modules must be installed in order for the app to work: Momen
 
 To run the application clone this repository to your computer and then run the following commands from a bash command line.
 
-node liri.js concert-this 'artist/band name here" (in quotes to take queries with more than one word)- This will return upcoming concert information from Bands in Town. 
+node liri.js concert-this <artist/band name here> - This will return upcoming concert information from Bands in Town. 
 
-node liri.js spotify-this-song 'name of song' - This will return song information from Spotify. (in quotes to take queries with more than one word)
+node liri.js spotify-this-song <'name of song'>- This will return song information from Spotify. (put name of song in quotes)
 
-node liri.js movie-this '' - This will return information about movies from OMDB. (put this in quotes to take queries with more than one word)
+node liri.js movie-this <movie name here> - This will return information about movies from OMDB. 
 
 node liri.js do-what-it-says - This will run a special command that is stored in a text file.
 
@@ -65,13 +65,16 @@ set all the files you don't want loaded before you push anything to Github or th
 This is the format suggested to include a screenshot
 
 Format: ![Alt Text](url)
-
+**bands in town response**
 ![bands-in-town screenshot](https://github.com/Artierra/liri-node-app/blob/master/bands-in-townscreenshot.png)
 
-
+**movie this response**
 ![movie-this-screenshot](https://github.com/Artierra/liri-node-app/blob/master/movie-this%20screenshot.png)
 
+**spotify this  response**
 ![spotify-this-song](https://github.com/Artierra/liri-node-app/blob/master/spotify-this-song%20screenshot.png)
 
+
+**do what it says response**
 ![do-what-it-says](https://github.com/Artierra/liri-node-app/blob/master/do-what-it-says.png)
 
